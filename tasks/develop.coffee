@@ -51,12 +51,10 @@ gulp.task 'templates', ->
 
 
 gulp.task 'copy', ->
-  locale = gulp.src('src/_locales/**').pipe gulp.dest 'build/_locales'
   images = gulp.src(paths.images).pipe gulp.dest 'build/images'
   fonts = gulp.src(paths.fonts).pipe gulp.dest 'build/fonts'
-  manifest = gulp.src('src/manifest.json').pipe gulp.dest 'build'
 
-  merge(locale, images, fonts, manifest)
+  merge(images, fonts)
 
 
 gulp.task 'index', ->
